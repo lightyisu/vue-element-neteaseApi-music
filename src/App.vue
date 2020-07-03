@@ -1,28 +1,53 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <top id="top"></top>
+      <div id="content">
+      <sidebar id="sidebar"></sidebar>
+      <router-view id="view"></router-view>
+      </div>
+         <player id="player"></player>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import sidebar from './components/sidebar.vue'
+import top from './components/nav.vue'
+import player from './components/player.vue'
 export default {
-  name: 'App',
+  name: 'app',
   components: {
-    HelloWorld
+   top,sidebar,player
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="stylus" >
+html
+body
+  margin 0
+  padding  0
+  width 100%
+  height 100%
+#player
+  position fixed
+  bottom 0
+  width 100%
+  
+#app
+  width 100%
+  height 100%
+#top
+  height 10%
+  overflow hidden
+
+#sidebar
+  
+  height 100%
+#content
+  display flex
+  height 90%
+#view
+  width 100%
+ 
+ 
 </style>
